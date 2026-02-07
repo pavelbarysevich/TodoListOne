@@ -86,11 +86,12 @@
 				};
 			};
 			buildConfigurationList = E65942DC2F361117006F6C82 /* Build configuration list for PBXProject "TodoListOne" */;
-			developmentRegion = en;
+			developmentRegion = ru;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = E65942D82F361117006F6C82;
 			minimizedProjectReferenceProxies = 1;
