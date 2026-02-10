@@ -1,9 +1,13 @@
 import SwiftUI
 
 struct AddListView: View {
+    
     @Environment(\.dismiss) private var dismiss
     @Environment(ListViewModel.self) private var listViewModel
     @State var newTask: String = ""
+    
+    @State var alertTitle: String = ""
+    @State var showAlert: Bool = false
     
     var body: some View {
         ScrollView {
@@ -36,11 +40,29 @@ struct AddListView: View {
             
         }
         .navigationTitle("Новая задача 📋")
+        .alert(isPresented: $showAlert) {
+            getAlet()
+        }
     }
     
     func saveButtonTask() {
-        listViewModel.addItem(title: newTask)
-        dismiss()
+        if textChecking() {
+            listViewModel.addItem(title: newTask)
+            dismiss()
+        }
+    }
+    
+    func textChecking() -> Bool {
+        if newTask.count < 3 {
+            alertTitle = "Список задач должен содержать минимум 3 символа 😎"
+            showAlert.toggle()
+            return false
+        }
+        return true
+    }
+    
+    func getAlet () -> Alert {
+        return Alert(title: Text(alertTitle))
     }
 }
 
