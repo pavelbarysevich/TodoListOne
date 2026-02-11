@@ -9,6 +9,7 @@ struct ListRow: View {
             Image(systemName: item.isCompleted ? "checkmark.circle" : "circle" )
                 .foregroundStyle(item.isCompleted ? .green : .red)
             Text(item.title)
+                .strikethrough(item.isCompleted, color: .red)
             Spacer()
         }
         .font(.title2)

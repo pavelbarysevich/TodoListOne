@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ItemModel: Identifiable {
+struct ItemModel: Identifiable, Codable {
     var id: String
     var title: String
     var isCompleted: Bool
