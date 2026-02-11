@@ -1,5 +1,5 @@
 import SwiftUI
-internal import Combine
+import Observation
 
 @Observable class ListViewModel {
     

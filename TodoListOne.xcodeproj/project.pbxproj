@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E61C07852F3CAE0F007BF1B1 /* NoItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61C07842F3CADFA007BF1B1 /* NoItemsView.swift */; };
 		E661E75B2F39BF6000FE3F12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E661E7582F39BF6000FE3F12 /* Assets.xcassets */; };
 		E661E75C2F39BF6000FE3F12 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E661E7522F39BF6000FE3F12 /* ItemModel.swift */; };
 		E661E75D2F39BF6000FE3F12 /* AddListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E661E7542F39BF6000FE3F12 /* AddListView.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E61C07842F3CADFA007BF1B1 /* NoItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoItemsView.swift; sourceTree = "<group>"; };
 		E65942E12F361117006F6C82 /* TodoListOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoListOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E661E7522F39BF6000FE3F12 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		E661E7542F39BF6000FE3F12 /* AddListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListView.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 		E661E7572F39BF6000FE3F12 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E61C07842F3CADFA007BF1B1 /* NoItemsView.swift */,
 				E661E7542F39BF6000FE3F12 /* AddListView.swift */,
 				E661E7552F39BF6000FE3F12 /* ListRow.swift */,
 				E661E7562F39BF6000FE3F12 /* ListView.swift */,
@@ -170,6 +173,7 @@
 				E661E7642F39C44100FE3F12 /* ListViewModel.swift in Sources */,
 				E661E75E2F39BF6000FE3F12 /* ListRow.swift in Sources */,
 				E661E75F2F39BF6000FE3F12 /* ListView.swift in Sources */,
+				E61C07852F3CAE0F007BF1B1 /* NoItemsView.swift in Sources */,
 				E661E7602F39BF6000FE3F12 /* TodoListOneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
