@@ -1,30 +1,40 @@
 import SwiftUI
 
 struct ListView: View {
-    
-    @State var items: [ItemModel] = [
-        ItemModel(title: "Первый пост", isCompleted: true),
-        ItemModel(title: "Второй пост", isCompleted: false),
-        ItemModel(title: "Третий пост", isCompleted: true)
-    ]
+    @Environment(ListViewModel.self) private var listViewModel
     
     var body: some View {
-        List {
-            ForEach(items) { item in
-                ListRow(item: item)
+        ZStack {
+            if listViewModel.items.isEmpty {
+                NoItemsView()
+                    .transition(AnyTransition.opacity.animation(.easeIn))
+            } else {
+                List {
+                    ForEach(listViewModel.items) { item in
+                        ListRow(item: item)
+                            .onTapGesture {
+                                withAnimation(.linear) {
+                                    listViewModel.updateItem(item: item)
+                                }
+                            }
+                    }
+                    .onDelete(perform: listViewModel.onDelete)
+                    .onMove(perform: listViewModel.onMove)
+                }
+                .listStyle(.plain)
+            }
+            
+        }
+        .navigationTitle("Задачи 🖊️")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                EditButton()
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                NavigationLink("Добавить", destination: AddListView())
+                
             }
         }
-        .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        EditButton()
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink("Добавить", destination: AddListView())
-
-                    }
-                }
-        .listStyle(.plain)
-        .navigationTitle("Задачи 🖊️")
     }
 }
 
@@ -32,5 +42,6 @@ struct ListView: View {
     NavigationStack {
         ListView()
     }
+    .environment(ListViewModel())
 }
 

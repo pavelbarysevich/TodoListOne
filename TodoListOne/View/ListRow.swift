@@ -7,8 +7,9 @@ struct ListRow: View {
     var body: some View {
         HStack {
             Image(systemName: item.isCompleted ? "checkmark.circle" : "circle" )
-                .foregroundStyle(item.isCompleted ? .green : .red)
+                .foregroundStyle(item.isCompleted ? .accent : .accent)
             Text(item.title)
+                .strikethrough(item.isCompleted, color: .accent)
             Spacer()
         }
         .font(.title2)
