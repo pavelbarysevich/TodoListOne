@@ -36,6 +36,7 @@ struct AddListView: View {
                 .cornerRadius(20)
                 
             }
+            .frame(maxWidth: 600)
             .padding(20)
             
         }
